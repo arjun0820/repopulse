@@ -7,7 +7,11 @@ authors = [
     { name = "arjun", email = "arjunyakkanti2004@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "faker>=40.43.0",
+    "psycopg[binary]>=3.3.6",
+    "python-dotenv>=1.2.4",
+]
 
 [project.scripts]
 repopulse = "repopulse:main"
@@ -21,3 +25,6 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.17.1",
 ]
+
+[tool.pytest.ini_options]
+markers = ["integration: needs the local Postgres running"]
